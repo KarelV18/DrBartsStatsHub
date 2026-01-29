@@ -1,0 +1,4 @@
+- source: Match day 2 Dashboard.qmd
+  quarto-pub:
+    - id: 9ecff8c5-25f7-4fca-b704-faf19964d059
+      url: https://drbarts.quarto.pub/match-day-2-season-2526

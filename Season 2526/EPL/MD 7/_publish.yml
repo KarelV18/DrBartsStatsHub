@@ -1,0 +1,4 @@
+- source: Match day 7 Dashboard.qmd
+  quarto-pub:
+    - id: e7a75187-bd0a-4365-8ff2-576342df0c75
+      url: https://drbarts.quarto.pub/match-day-7-season-2526

@@ -1,0 +1,4 @@
+- source: Match day 8 Dashboard.qmd
+  quarto-pub:
+    - id: 5b16ba3f-689c-4695-a7ba-a5e91f03e0dc
+      url: https://drbarts.quarto.pub/match-day-8-season-2526

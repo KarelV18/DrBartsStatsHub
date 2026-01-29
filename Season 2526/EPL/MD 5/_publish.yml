@@ -1,0 +1,4 @@
+- source: Match day 5 Dashboard.qmd
+  quarto-pub:
+    - id: 4a561f2e-f8cc-40ba-ae9a-a30a22933530
+      url: https://drbarts.quarto.pub/match-day-5-season-2526

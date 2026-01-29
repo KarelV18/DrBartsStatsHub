@@ -1,0 +1,24 @@
+- source: Match day 15 Dashboard.qmd
+  quarto-pub:
+    - id: 2e73f66e-138a-468f-a670-678677fed00b
+      url: https://drbarts.quarto.pub/match-day-15-season-2526
+- source: Match day 17 Dashboard.qmd
+  quarto-pub:
+    - id: 7609b31e-026d-4cb1-9938-e1ac0aa0ef78
+      url: https://drbarts.quarto.pub/match-day-17-season-2526
+- source: Match day 18 Dashboard.qmd
+  quarto-pub:
+    - id: 61ce9bae-242f-4c71-a55b-d71ac433b580
+      url: https://drbarts.quarto.pub/match-day-18-season-2526
+- source: Match day 19 Dashboard.qmd
+  quarto-pub:
+    - id: dccf9866-c877-4298-a417-082bee0f3d29
+      url: https://drbarts.quarto.pub/match-day-19-season-2526
+- source: Match day 20 Dashboard.qmd
+  quarto-pub:
+    - id: 7e1bf65a-ecd3-47d3-b8f9-09fe8048694f
+      url: https://drbarts.quarto.pub/match-day-20-season-2526
+- source: Match day 21 Dashboard.qmd
+  quarto-pub:
+    - id: a0238458-6f02-4988-8301-e8db32c17534
+      url: https://drbarts.quarto.pub/match-day-21-season-2526
