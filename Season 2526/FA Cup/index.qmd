@@ -6,4 +6,31 @@ theme:
 type: default 
 ---
 
-- [FACMD 3](FACMD%20/)
+```{r}
+#| results: asis
+#| echo: false
+base_dir <- "."
+
+md_dirs <- list.dirs(base_dir, recursive = FALSE, full.names = FALSE)
+md_dirs <- md_dirs[!grepl("^\\.", md_dirs)]
+md_dirs <- md_dirs[md_dirs != "index_files"]
+md_dirs <- sort(md_dirs)
+
+links <- vapply(md_dirs, function(md) {
+  docs <- file.path(base_dir, md, "Docs")
+  if (!dir.exists(docs)) return(NA_character_)
+  html <- list.files(docs, pattern = "\\.html$", full.names = FALSE)
+  if (length(html) == 0) return(NA_character_)
+  html <- sort(html)[1]
+
+  path <- file.path(md, "docs", html)
+  path <- gsub("\\\\", "/", path)
+  url <- utils::URLencode(path)
+  sprintf("- [%s](%s)", md, url)
+}, character(1))
+
+links <- links[!is.na(links)]
+cat(paste(links, collapse = "\n"), "\n")
+```
+
+<!-- - [FACMD 3](FACMD%20/) -->

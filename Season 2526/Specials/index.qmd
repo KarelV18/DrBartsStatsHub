@@ -5,7 +5,34 @@ theme:
 type: default 
 ---
 
-- [Nov international break](Nov%20international%20break/docs/Nov%20International%20break%202526%20Dashboard%202.html)
+```{r}
+#| echo: false
+#| results: asis
+base_dir <- "."
+
+sub_dirs <- list.dirs(base_dir, recursive = FALSE, full.names = FALSE)
+sub_dirs <- sub_dirs[!grepl("^\\.", sub_dirs)]
+sub_dirs <- sub_dirs[sub_dirs != "index_files"]
+sub_dirs <- sort(sub_dirs)
+
+links <- vapply(sub_dirs, function(name) {
+  docs <- file.path(base_dir, name, "Docs")
+  if (!dir.exists(docs)) return(NA_character_)
+  html <- list.files(docs, pattern = "\\.html$", full.names = FALSE)
+  if (length(html) == 0) return(NA_character_)
+  html <- sort(html)[1]
+
+  path <- file.path(name, "docs", html)
+  path <- gsub("\\\\", "/", path)
+  url <- utils::URLencode(path)
+  sprintf("- [%s](%s)", name, url)
+}, character(1))
+
+links <- links[!is.na(links)]
+cat(paste(links, collapse = "\n"), "\n")
+```
+
+<!-- - [Nov international break](Nov%20international%20break/docs/Nov%20International%20break%202526%20Dashboard%202.html)
 - [Oct international break](Oct%20international%20break/docs/Oct%20International%20break%202526%20Dashboard.html)
 - [Sept international break](Sept%20international%20break/docs/Sept%20International%20break%202526%20Dashboard.html)
-
+ -->

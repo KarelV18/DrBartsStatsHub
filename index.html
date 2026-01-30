@@ -35,15 +35,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="index_files/libs/bootstrap/bootstrap-514981598f886405bc67e039c5001fd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
 
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -52,7 +53,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -64,8 +65,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="season-25-26" class="level2">
-<h2 class="anchored" data-anchor-id="season-25-26"><a href="Season%202526/">Season 25-26</a></h2>
+<section id="football-viz-hub" class="level1">
+<h1>Football Viz Hub</h1>
+<p>A home for my <strong>football visualisation work</strong> across <strong>AI UP</strong> and <strong>TMM</strong> pods.</p>
+<section id="browse-by-season" class="level2">
+<h2 class="anchored" data-anchor-id="browse-by-season">Browse by season</h2>
+</section>
+<section id="season-2526" class="level2">
+<h2 class="anchored" data-anchor-id="season-2526"><a href="Season%202526">Season 2526</a></h2>
+<!-- ## [Season 25-26](Season%202526/) -->
+</section>
 </section>
 
 </main>
@@ -157,6 +166,11 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -475,4 +489,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="index_files/libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

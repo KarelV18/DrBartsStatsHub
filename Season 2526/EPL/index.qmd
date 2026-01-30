@@ -6,6 +6,35 @@ type: default
 ---
 
 
+```{r}
+#| results: asis
+#| echo: false
+base_dir <- "."
+
+md_dirs <- list.dirs(base_dir, recursive = FALSE, full.names = FALSE)
+md_dirs <- md_dirs[grepl("^MD\\s+\\d+$", md_dirs)]
+md_dirs <- md_dirs[order(as.numeric(sub("^MD\\s+", "", md_dirs)))]
+
+links <- vapply(md_dirs, function(md) {
+  docs <- file.path(base_dir, md, "Docs")
+  if (!dir.exists(docs)) return(NA_character_)
+  html <- list.files(docs, pattern = "\\.html$", full.names = FALSE)
+  if (length(html) == 0) return(NA_character_)
+  html <- sort(html)[1]
+
+  path <- file.path(md, "docs", html)
+  path <- gsub("\\\\", "/", path)
+  url <- utils::URLencode(path)
+  sprintf("- [%s](%s)", md, url)
+}, character(1))
+
+links <- links[!is.na(links)]
+cat(paste(links, collapse = "\n"), "\n")
+```
+
+
+<!--
+
 - [MD 1](MD%201/docs/Match%20day%201%20Dashboard.html)
 - [MD 2](MD%202/docs/Match%20day%202%20Dashboard.html)
 - [MD 3](MD%203/docs/Match%20day%203%20Dashboard.html)
@@ -29,3 +58,5 @@ type: default
 - [MD 21](MD%2021/docs/Match%20day%2021%20Dashboard.html)
 - [MD 22](MD%2022/docs/Match%20day%2022%20Dashboard.html)
 - [MD 23](MD%2023/docs/Match%20day%2023%20Dashboard.html)
+
+-->
